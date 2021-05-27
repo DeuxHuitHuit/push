@@ -48,7 +48,6 @@ fi
 
 # make temp folder
 mkdir -p $TEMP_FOLDER
-mkdir -p $TEMP_FOLDER/ssh
 
 # get dockerfile
 curl -s https://raw.githubusercontent.com/DeuxHuitHuit/push/main/Dockerfile > $TEMP_FOLDER/Dockerfile
@@ -58,6 +57,9 @@ curl -s https://raw.githubusercontent.com/DeuxHuitHuit/push/main/checkout.sh > $
 
 # copy ssh folder to tmp
 cp -R ~/.ssh/. $TEMP_FOLDER/ssh
+
+# remove config since it can cause errors with ssh client
+rm -rf $TEMP_FOLDER/ssh/config
 
 # copy subversion folder to tmp
 cp -R ~/.subversion/. $TEMP_FOLDER/subversion
