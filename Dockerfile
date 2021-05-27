@@ -15,7 +15,6 @@ ARG opsecretkey
 RUN apt-get update
 
 # install dependencies (some are probably already installed anyway)
-RUN apt-get install -y wget
 RUN apt-get install -y curl
 RUN apt-get install -y jq
 RUN apt-get install -y unzip
@@ -28,7 +27,7 @@ RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 RUN apt-get install -y nodejs
 
 # download 1password cli
-RUN wget https://cache.agilebits.com/dist/1P/op/pkg/v1.8.0/op_linux_386_v1.8.0.zip
+RUN curl -s https://cache.agilebits.com/dist/1P/op/pkg/v1.8.0/op_linux_386_v1.8.0.zip > op_linux_386_v1.8.0.zip
 RUN unzip op_linux_386_v1.8.0.zip
 RUN mv op /usr/local/bin
 
