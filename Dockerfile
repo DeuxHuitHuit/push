@@ -36,7 +36,7 @@ RUN mv op /usr/local/bin
 ADD ssh /root/.ssh
 
 # add checkout script
-ADD checkout.sh /root/checkout.sh
+ADD checkout.sh /checkout.sh
 
 # copy svn setup
 ADD subversion /root/.subversion
