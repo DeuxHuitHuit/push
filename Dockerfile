@@ -21,6 +21,7 @@ RUN apt-get install -y jq
 RUN apt-get install -y unzip
 RUN apt-get install -y rsync
 RUN apt-get install -y subversion
+RUN apt-get install -y openssh-client
 
 # install nodejs
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
