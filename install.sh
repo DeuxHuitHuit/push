@@ -23,7 +23,7 @@ hasDocker
 mkdir -p deuxhuithuit-push-tmp
 
 # Get dockerfile
-curl -s https://raw.githubusercontent.com/DeuxHuitHuit/push/main/Dockerfile > deuxhuithuit-push-tmp/Dockerfile
+curl -s https://raw.githubusercontent.com/DeuxHuitHuit/push/HEAD/Dockerfile > deuxhuithuit-push-tmp/Dockerfile
 
 # copy ssh folder to tmp
 cp -R ~/.ssh deuxhuithuit-push-tmp

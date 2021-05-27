@@ -35,7 +35,7 @@ RUN mv op /usr/local/bin
 
 # install ssh key
 RUN mkdir ~/.ssh
-COPY deuxhuithuit-push-tmp/.ssh ~
+ADD deuxhuithuit-push-tmp/.ssh ~
 
 # login the svn user https://unix.stackexchange.com/a/451882
 RUN rm -rf ~/.subversion
