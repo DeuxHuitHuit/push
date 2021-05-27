@@ -10,6 +10,7 @@ FROM ubuntu:20.04
 ARG opdomain
 ARG opemail
 ARG opsecretkey
+ARG opsvnentry
 
 # get repo updates
 RUN apt-get update
@@ -44,3 +45,4 @@ ADD subversion /root/.subversion
 ENV OP_AUTH_DOMAIN=${opdomain}
 ENV OP_AUTH_EMAIL=${opemail}
 ENV OP_AUTH_SECRET_KEY=${opsecretkey}
+ENV OP_SVN_ENTRY=${opsvnentry}

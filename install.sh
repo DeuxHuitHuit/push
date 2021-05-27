@@ -26,6 +26,26 @@ function hasDocker {
 hasCurl
 hasDocker
 
+if [[ -z "${OP_AUTH_DOMAIN}" ]]; then
+	echo "OP_AUTH_DOMAIN is not set in your environement variables."
+	exit 1;
+fi
+
+if [[ -z "${OP_AUTH_EMAIL}" ]]; then
+	echo "OP_AUTH_EMAIL is not set in your environement variables."
+	exit 1;
+fi
+
+if [[ -z "${OP_AUTH_SECRET_KEY}" ]]; then
+	echo "OP_AUTH_SECRET_KEY is not set in your environement variables."
+	exit 1;
+fi
+
+if [[ -z "${OP_SVN_ENTRY}" ]]; then
+	echo "OP_SVN_ENTRY is not set in your environement variables."
+	exit 1;
+fi
+
 # make temp folder
 mkdir -p $TEMP_FOLDER
 mkdir -p $TEMP_FOLDER/ssh
@@ -43,7 +63,7 @@ cp -R ~/.ssh/. $TEMP_FOLDER/ssh
 cp -R ~/.subversion/. $TEMP_FOLDER/subversion
 
 # actual docker build
-docker build -t deuxhuithuit/push $TEMP_FOLDER --build-arg opdomain="$OP_AUTH_DOMAIN " --build-arg opemail="$OP_AUTH_EMAIL" --build-arg opsecretkey="$OP_AUTH_SECRET_KEY"
+docker build -t deuxhuithuit/push $TEMP_FOLDER --build-arg opdomain="$OP_AUTH_DOMAIN " --build-arg opemail="$OP_AUTH_EMAIL" --build-arg opsecretkey="$OP_AUTH_SECRET_KEY" --build-arg opsvnentry="$OP_SVN_ENTRY"
 
 # cleanup temp file
 rm -rf $TEMP_FOLDER
