@@ -26,30 +26,6 @@ function hasDocker {
 hasCurl
 hasDocker
 
-read -p "🌎 1password domain: " -r
-
-if [ -z "$REPLY" ] ;then
-	abort
-fi
-
-OPDOMAIN=$REPLY
-
-read -p "📧 1password email: " -r
-
-if [ -z "$REPLY" ] ;then
-	abort
-fi
-
-OPEMAIL=$REPLY
-
-read -p "🔐 1password secret key: " -r
-
-if [ -z "$REPLY" ] ;then
-	abort
-fi
-
-OPSECRETKEY=$REPLY
-
 # make temp folder
 mkdir -p $TEMP_FOLDER
 mkdir -p $TEMP_FOLDER/ssh
@@ -64,7 +40,7 @@ cp -R ~/.ssh/. $TEMP_FOLDER/ssh
 cp -R ~/.subversion/. $TEMP_FOLDER/subversion
 
 # actual docker build
-docker build -t deuxhuithuit/push $TEMP_FOLDER --build-arg opdomain="$OPDOMAIN" --build-arg opemail="$OPEMAIL" --build-arg opsecretkey="$OPSECRETKEY"
+docker build -t deuxhuithuit/push $TEMP_FOLDER --build-arg opdomain="$OP_AUTH_DOMAIN " --build-arg opemail="$OP_AUTH_EMAIL" --build-arg opsecretkey="$OP_AUTH_SECRET_KEY"
 
 # cleanup temp file
 rm -rf $TEMP_FOLDER
