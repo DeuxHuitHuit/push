@@ -7,8 +7,6 @@
 FROM ubuntu:20.04
 
 # arguments definition
-ARG svnuser
-ARG svnpassword
 ARG opdomain
 ARG opemail
 ARG opsecretkey
@@ -36,9 +34,8 @@ RUN mv op /usr/local/bin
 # install ssh key
 ADD ssh /root/.ssh
 
-# login the svn user https://unix.stackexchange.com/a/451882
-RUN rm -rf ~/.subversion
-RUN yes yes | svn --username=${svnuser} --password=${svnpassword} ls https://svn.288dev.com:8443/svn/288/ &>/dev/null
+# copy svn setup
+ADD subversion /root/.subversion
 
 # env vars for 1password
 ENV OP_AUTH_DOMAIN=${opdomain}
