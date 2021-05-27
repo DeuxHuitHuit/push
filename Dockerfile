@@ -34,8 +34,7 @@ RUN unzip op_linux_386_v1.8.0.zip
 RUN mv op /usr/local/bin
 
 # install ssh key
-RUN mkdir ~/.ssh
-ADD deuxhuithuit-push-tmp/.ssh $HOME
+ADD ssh /root/.ssh
 
 # login the svn user https://unix.stackexchange.com/a/451882
 RUN rm -rf ~/.subversion

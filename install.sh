@@ -21,15 +21,16 @@ hasDocker
 
 # make temp folder
 mkdir -p deuxhuithuit-push-tmp
+mkdir -p deuxhuithuit-push-tmp/ssh
 
 # Get dockerfile
-curl -s https://raw.githubusercontent.com/DeuxHuitHuit/push/main/Dockerfile?flush_cache=true > deuxhuithuit-push-tmp/Dockerfile
+#curl -s https://raw.githubusercontent.com/DeuxHuitHuit/push/main/Dockerfile?flush_cache=true > deuxhuithuit-push-tmp/Dockerfile
 
 # copy ssh folder to tmp
-cp -R ~/.ssh deuxhuithuit-push-tmp
+cp -R ~/.ssh/. deuxhuithuit-push-tmp/ssh
 
 # actual docker build
-docker build -t deuxhuithuit/push:1.0.0 deuxhuithuit-push-tmp
+docker build -t deuxhuithuit/push deuxhuithuit-push-tmp
 
 # cleanup temp file
-rm -rf deuxhuithuit-push-tmp
+# rm -rf deuxhuithuit-push-tmp
