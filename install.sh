@@ -30,8 +30,11 @@ hasDocker
 mkdir -p $TEMP_FOLDER
 mkdir -p $TEMP_FOLDER/ssh
 
-# Get dockerfile
-curl -s https://raw.githubusercontent.com/DeuxHuitHuit/push/main/Dockerfile?flush_cache=true > $TEMP_FOLDER/Dockerfile
+# get dockerfile
+curl -s https://raw.githubusercontent.com/DeuxHuitHuit/push/main/Dockerfile > $TEMP_FOLDER/Dockerfile
+
+# get checkout.sh file
+curl -s https://raw.githubusercontent.com/DeuxHuitHuit/push/main/checkout.sh > $TEMP_FOLDER/checkout.sh
 
 # copy ssh folder to tmp
 cp -R ~/.ssh/. $TEMP_FOLDER/ssh
