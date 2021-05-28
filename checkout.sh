@@ -18,3 +18,9 @@ svn co $SVN_URL project --username $SVN_USERNAME --password $SVN_PASSWORD
 
 # save session token for other files
 echo $OP_TOKEN > .opsession
+
+# navigate to the project
+cd project
+
+# install npm packages
+npm install
