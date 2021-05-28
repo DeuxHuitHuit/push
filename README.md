@@ -21,7 +21,7 @@ You can add your variables via your .bash_profile/rc/aliases with `export`. e.g.
 ### Docker
 You need to download [Docker](https://www.docker.com/products/docker-desktop) before the installation.
 
-### The actual installation
+## The actual installation
 After all the steps above are done, **restart** your terminal and run this!
 
 ```
