@@ -38,9 +38,6 @@ ADD ssh /root/.ssh
 # add checkout script
 ADD checkout.sh /checkout.sh
 
-# copy svn setup
-ADD subversion /root/.subversion
-
 # env vars for 1password
 ENV OP_AUTH_DOMAIN=${opdomain}
 ENV OP_AUTH_EMAIL=${opemail}
