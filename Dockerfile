@@ -43,3 +43,4 @@ ENV OP_AUTH_DOMAIN=${opdomain}
 ENV OP_AUTH_EMAIL=${opemail}
 ENV OP_AUTH_SECRET_KEY=${opsecretkey}
 ENV OP_SVN_ENTRY=${opsvnentry}
+ENV OP_SLACK_WEBHOOK="wqc4uhvhwrtqbcueg2zbe4x7lq"
