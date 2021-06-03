@@ -15,7 +15,8 @@ ARG opsvnentry
 # get repo updates
 RUN apt-get update
 
-# install dependencies (some are probably already installed anyway)
+# install dependencies
+RUN apt-get install -y bash
 RUN apt-get install -y curl
 RUN apt-get install -y jq
 RUN apt-get install -y unzip
