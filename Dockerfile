@@ -34,6 +34,7 @@ RUN mv op /usr/local/bin
 
 # install ssh key
 ADD ssh /root/.ssh
+RUN chmod 600 /root/.ssh/id_rsa
 
 # add checkout script
 ADD checkout.sh /checkout.sh
