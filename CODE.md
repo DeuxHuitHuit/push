@@ -28,7 +28,7 @@ This file is really where the magic happen. It deals with every critical steps o
 - Waking up the website
 - Notifying the team in slack via a webhook call
 
-**This file needs to be configured in every single projects** before you run it.** (line 5, 6 and 7)
+**This file needs to be configured in every single projects before you run it.** (line 5, 6 and 7)
 
 ## push (inside Craft's REPO)
 [Reference](https://github.com/DeuxHuitHuit/craft-template/blob/master/push)
